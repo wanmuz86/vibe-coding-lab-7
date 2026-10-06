@@ -1,0 +1,417 @@
+:root {
+  color-scheme: light;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #e7e0d6;
+  --paper: #f6f3ee;
+  --card: #fffcf8;
+  --teal: #0f5c56;
+  --teal-dark: #0c433e;
+  --danger: #9f1239;
+  --open: #9a3412;
+  --open-bg: #ffedd5;
+  --progress: #1d4ed8;
+  --progress-bg: #dbeafe;
+  --resolved: #166534;
+  --resolved-bg: #dcfce7;
+  --high: #9f1239;
+  --high-bg: #ffe4e6;
+  --medium: #92400e;
+  --medium-bg: #fef3c7;
+  --low: #44403c;
+  --low-bg: #f5f5f4;
+  --internal: #5b21b6;
+  --internal-bg: #ede9fe;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--teal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--teal-dark);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  padding: 0.9rem 1.25rem;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: auto;
+}
+
+.user-name {
+  font-size: 0.95rem;
+}
+
+.role-pill,
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.role-pill {
+  background: #e7f3f1;
+  color: var(--teal-dark);
+}
+
+.page {
+  width: min(920px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.75rem 0 3rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.lede {
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
+.stack {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.card,
+.ticket-card,
+.comment,
+.auth-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.auth-card {
+  width: min(440px, 100%);
+  padding: 1.5rem;
+}
+
+.auth-card h1 {
+  font-size: 1.7rem;
+  margin-bottom: 0.35rem;
+}
+
+.auth-links {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.dev-accounts {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.dev-accounts code {
+  font-family: "SFMono-Regular", ui-monospace, monospace;
+  font-size: 0.85em;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #d6d3d1;
+  border-radius: 10px;
+  background: white;
+  color: var(--ink);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.button {
+  display: inline-block;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  background: var(--teal);
+  color: white;
+  cursor: pointer;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--teal-dark);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--teal-dark);
+  border: 1px solid var(--teal);
+}
+
+.button-secondary:hover {
+  background: #e7f3f1;
+}
+
+.button-quiet {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.button-quiet:hover {
+  background: var(--paper);
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.banner {
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  background: #fff1f2;
+  color: var(--danger);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.ticket-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ticket-card a {
+  display: block;
+  padding: 1rem 1.05rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ticket-card h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.45rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  align-items: center;
+  color: var(--muted);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.88rem;
+}
+
+.status-open {
+  background: var(--open-bg);
+  color: var(--open);
+}
+
+.status-in_progress {
+  background: var(--progress-bg);
+  color: var(--progress);
+}
+
+.status-resolved {
+  background: var(--resolved-bg);
+  color: var(--resolved);
+}
+
+.priority-high {
+  background: var(--high-bg);
+  color: var(--high);
+}
+
+.priority-medium {
+  background: var(--medium-bg);
+  color: var(--medium);
+}
+
+.priority-low {
+  background: var(--low-bg);
+  color: var(--low);
+}
+
+.detail-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.detail-card,
+.comment,
+.composer {
+  padding: 1rem 1.05rem;
+}
+
+.detail-card h1 {
+  font-size: 1.8rem;
+  margin: 0.7rem 0 0.8rem;
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+}
+
+.facts div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.facts dt {
+  color: var(--muted);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.comment-list {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.75rem;
+}
+
+.comment header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.7rem;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}
+
+.comment p {
+  white-space: pre-wrap;
+}
+
+.visibility-internal {
+  background: var(--internal-bg);
+  color: var(--internal);
+}
+
+.empty {
+  padding: 1.25rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .header-user {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
